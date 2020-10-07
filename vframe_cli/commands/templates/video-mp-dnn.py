@@ -23,7 +23,7 @@ from vframe.utils import click_utils
 @click.option('-t', '--threads', 'opt_threads', default=2)
 @click.option('-m', '--model', 'opt_model_enum',
   type=types.ModelZooClickVar,
-  default='caffe_places365_googlenet',
+  default='caffe-places365-googlenet',
   help=click_utils.show_help(types.ModelZoo))
 @click.pass_context
 def cli(ctx, opt_dir_in, opt_recursive, opt_exts, opt_slice, opt_threads, opt_model_enum,):

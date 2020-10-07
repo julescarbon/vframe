@@ -24,7 +24,7 @@ from vframe.utils import click_utils
 @click.option('-t', '--threads', 'opt_threads', default=2)
 @click.option('-m', '--model', 'opt_model_enum',
   type=types.ModelZooClickVar,
-  default = 'caffe_imagenet_bvlc_alexnet',
+  default = 'caffe-imagenet-bvlc-alexnet',
   help=click_utils.show_help(types.ModelZoo))
 @click.option('--min-width', 'opt_width_min', default=224,
   help='Filter out media below this width')
@@ -278,6 +278,6 @@ def cli(ctx, opt_dir_in, opt_dir_out, opt_recursive, opt_exts, opt_slice, opt_th
 
   n_ok = sum(pool_results)
   n_nok = len(pool_results) - n_ok
-  log.info(f'Wrote keyframes for {n_ok:,}')
+  log.info(f'Wrote keyframes for {n_ok:,} videos')
   if n_nok > 0:
-    log.error(f'Could not write keyframes for: {n_nok:,}')
+    log.error(f'Could not write keyframes for: {n_nok:,} videos')
